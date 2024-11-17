@@ -26,7 +26,7 @@ function App() {
     setShowVideo(false);
 
     try {
-      const response = await axios.get(`/download?url=${encodeURIComponent(url)}`, {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/download?url=${encodeURIComponent(url)}`, {
         responseType: 'blob',
       });
 
