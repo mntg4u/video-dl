@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: video-downloader-backend
+    env: node
+    buildCommand: "npm install"
+    startCommand: "node server/index.js"
+    plan: free
+    region: oregon
+    branches: main
+
+  - type: web
+    name: video-downloader-frontend
+    env: static
+    buildCommand: "npm install && npm run build"
+    startCommand: "serve -s build"
+    plan: free
+    region: oregon
+    branches: main
